@@ -44,7 +44,7 @@ public class Pre_process {
         return stemmedText.toString().trim();
     }
 
-    // Fonction principale pour combiner les deux étapes (optionnel)
+    // Fonction principale pour combiner les deux étapes
     public String processText(String content) {
         String withoutStopwords = removeStopwords(content);
         return applyStemming(withoutStopwords);

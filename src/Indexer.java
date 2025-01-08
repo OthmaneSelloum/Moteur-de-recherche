@@ -25,7 +25,7 @@ public class Indexer {
         return tfidfIndex;
     }
 
-    // Méthode pour calculer le TF
+    // Méthode pour calculer le TF (Term Frequency)
     private static Map<String, Double> calculateTF(String[] terms) {
         Map<String, Double> tfMap = new HashMap<>();
         int totalTerms = terms.length;
@@ -41,7 +41,7 @@ public class Indexer {
         return tfMap;
     }
 
-    // Méthode pour calculer l'IDF
+    // Méthode pour calculer l'IDF (Inverse Document Frequency)
     private static Map<String, Double> calculateIDF(Map<String, String> documents) {
         Map<String, Double> idfMap = new HashMap<>();
         int totalDocs = documents.size();
