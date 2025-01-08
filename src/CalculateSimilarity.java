@@ -32,18 +32,13 @@ public class CalculateSimilarity {
     public static Map<String, Double> computeSimilarities(Map<String, Double> queryVector, Map<String, Map<String, Double>> index) {
         Map<String, Double> similarityScores = new HashMap<>();
 
-        // Comparer la requête à chaque document
         for (Map.Entry<String, Map<String, Double>> docEntry : index.entrySet()) {
             String docName = docEntry.getKey();
             Map<String, Double> docVector = docEntry.getValue();
 
-            // Calcul de la similarité entre la requête et le document
             double similarity = computeCosineSimilarity(queryVector, docVector);
-
-            // Ajouter le score de similarité pour ce document
             similarityScores.put(docName, similarity);
         }
-
         return similarityScores;
     }
 }
